@@ -2,7 +2,7 @@
  header('Location: search.php');   
 } ?>
 <?php require 'include.php'; ?>
-<?
+<?php
 $dvd = $_GET['dvd'];
 //PDO()//PHP DATA OBJECT. CAN WORK WITH any type of database. a lot of frameworks use this.
 $host = 'itp460.usc.edu';
@@ -44,20 +44,20 @@ $row=$statement->rowCount();
     <tbody>
 		<?php foreach ($movies as $movie) : ?>
 			<tr> 
-				<td><? echo $movie->title ?></td>
-				<td><? echo $movie->genre_name?></td>
-				<td><? echo $movie->format_name?></td>
+				<td><?php echo $movie->title ?></td>
+				<td><?php echo $movie->genre_name?></td>
+				<td><?php echo $movie->format_name?></td>
 				<td>
 					<a href="ratings.php?rating_name=<?php echo $movie->rating_name ?>"> 
-						<? echo $movie->rating_name; ?> 
+						<?php echo $movie->rating_name; ?> 
 					</a>
 				</td>
 		     </tr> 
 		<?php endforeach ?>
    </tbody>
-<? else : ?>
-	<? echo $dvd . ' returned no results. <a href="search.php"> Try another search! </a>' ; ?>
-<? endif ?>
+<?php else : ?>
+	<?php echo $dvd . ' returned no results. <a href="search.php"> Try another search! </a>' ; ?>
+<?php endif ?>
 </table>
 
 <?php require 'footer.php'; ?>
