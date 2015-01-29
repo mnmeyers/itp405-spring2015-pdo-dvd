@@ -1,9 +1,9 @@
 <?php require 'include.php'; ?>
-<? $id = $_GET['rating_name']; ?>
+<?php $id = $_GET['rating_name']; ?>
 
 
 
-<?
+<?php
 
 //PDO()//PHP DATA OBJECT. CAN WORK WITH any type of database. a lot of frameworks use this.
 $host = 'itp460.usc.edu';
@@ -45,10 +45,10 @@ $movies = $statement->fetchAll(PDO::FETCH_OBJ);
     <tbody>
 		<?php foreach ($movies as $movie) : ?>
 			<tr> 
-				<td><? echo $movie->title ?></td>
-				<td><? echo $movie->genre_name?></td>
-				<td><? echo $movie->format_name?></td>
-				<td><? echo $movie->rating_name; ?></td>
+				<td><?php echo $movie->title ?></td>
+				<td><?php echo $movie->genre_name?></td>
+				<td><?php echo $movie->format_name?></td>
+				<td><?php echo $movie->rating_name; ?></td>
 		     </tr> 
 		<?php endforeach ?>
    </tbody>
