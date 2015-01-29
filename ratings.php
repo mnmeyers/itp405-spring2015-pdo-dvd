@@ -24,7 +24,7 @@ ON dvds.rating_id = ratings.id
 WHERE rating_name = '$id'
 ";
 $statement = $pdo->prepare($sql);
-$like = '%' . $dvd . '%';
+//$like = '%' . $dvd . '%';
 $statement->bindParam(1, $like);//binding it to like ?. the 1 is the first question mark in that sql. or it's the first object in the array...? bind param has to be after prepare. 
 $statement->execute();
 $movies = $statement->fetchAll(PDO::FETCH_OBJ);
